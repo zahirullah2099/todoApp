@@ -9,6 +9,9 @@ inputBox.onkeyup = ()=>{
     let userdata = inputBox.value; 
     if(userdata.trim() != 0){
         addButton.classList.add("active"); 
+        if(userdata === ""){
+            alert("enter messege");
+        }
     }
     else{
         addButton.classList.remove("active");
@@ -18,12 +21,14 @@ inputBox.onkeyup = ()=>{
  addButton.addEventListener("click", () =>{
      let newElement = document.createElement("li");
      let userdata = inputBox.value; 
-      newElement.innerHTML = `${userdata}  <i class="bi bi-trash3-fill"></i>`;
+      newElement.innerHTML = `${userdata}  <i class="bi bi-trash3-fill"></i> `;
       todoList.appendChild(newElement);
       inputBox.value = "";
 
       newElement.querySelector("i").addEventListener("click", ()=>{
-        newElement.remove(); 
+        if (newElement.parentNode) {
+            newElement.parentNode.removeChild(newElement);
+        }
       })
  })
 

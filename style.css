@@ -92,8 +92,7 @@
  }
  .todolist li i{
     position: absolute;
-    right: -45px;
-    /* margin-right: -45px; */
+    right: -45px; 
     color: white;
     background-color: red; 
     width: 45px;
